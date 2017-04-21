@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="build/css/vendor.css">
+<head>
+  <link rel="stylesheet" href="build/css/vendor.css">
   <link rel="stylesheet" href="build/css/styles.css">
   <script src="build/js/vendor.min.js"></script>
   <script type="text/javascript" src="build/js/app.js"></script>
-    <title>Best Doctor</title>
-  </head>
-  <body>
-    <div class="container-fluid wholepage"> <!-- main container -->
-      <div class="row header">
-        <h1>Best Doctor <small>help finding the best doctor for you</small></h1>
-      </div>
+  <title>Best Doctor</title>
+</head>
+<body>
+  <div class="container wholepage"> <!-- main container -->
+    <div class="row header">
+      <h1>Best Doctor <small>help finding the best doctor for you</small></h1>
+    </div>
+    <div class="row ">
       <div class="col-md-2 sidebar">
         <p>sidebar stuff goes here</p>
       </div>
-      <div class="container mainbody"> <!-- body container -->
+      <div class="col-md-8 mainbody-col">
+        <div class="container mainbody"> <!-- body container -->
 
-        <div class="row searchrow">
-          <label for="searchCondition">Search for a condition:</label>
-          <input type="text" name="searchCondition" id="searchCondition" placeholder="sinuses, chronic pain, etc...">
-          <button type="button" name="button" class="btn btn-info">Search...</button>
+          <div class="row searchrow">
+            <label for="inputCondition">Search for a condition:</label>
+            <input type="text" name="inputCondition" id="inputCondition" placeholder="sinuses, chronic pain, etc...">
+            <button type="button" name="button" class="btn btn-info" id="searchCondition">Search...</button>
+          </div>
+
+          <div class="results">
+            <p>Results table will go here</p>
+          </div>
+
+
         </div>
-
-        <div class="results">
-          <p>Results table will go here</p>
-        </div>
-
-
       </div>
+
     </div>
-  </body>
+  </div>
+</body>
 </html>
