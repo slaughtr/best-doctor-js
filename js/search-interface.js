@@ -19,24 +19,30 @@ $(function () {
     $('#showResults').text('')
     getDoctors(medicalIssue).done((result) => {
       let doctor = result.data
-      console.log(specialty);
-      console.log(result.data[0].specialties[0].uid);
+      // console.log(specialty);
+      // console.log(result.data[0].specialties[0].uid);
 
       if (doctor.length == 0) { //if search returns no results, tell that to the the user
         $('#showResults').append('<tr><td> No results! </tr></td>')
       }
 
-      doctor.forEach(function(specialty, i) {
-        if (specialty.specialties[i]) {
-          if (specialty == specialty.specialties[i].uid) {
-          console.log('found a match');
-        } else {
-          console.log('idk');
-        }
-      }
-      })
-
       doctor.forEach(function (doctor) {
+        //failed foreach loop for specialties
+        // doctor.specialties.forEach(function(thisSpec, i) {
+        //   if (thisSpec) {
+        //     console.log(thisSpec.specialties[i])
+        //     console.log('specialty : ' + specialty)
+        //     console.log(thisSpec.specialties[i].uid)
+        //     if (specialty === thisSpec.uid) {
+        //       //do stuff here
+        //   } else {
+        //     console.log('no match found')
+        //   }
+        // } else {
+        //   console.log('no specialities ')
+        // }
+        // })
+
         $('#showResults').append('<tr>')
         //most of the image properties below are for the popover
         $('#showResults').append('<td> <img id="imageId" data-container="body" data-trigger="manual" data-toggle="popover" title="' + doctor.profile.first_name + '" data-content="' + doctor.profile.bio + '"  data-options=\'{ "image" : "' + doctor.profile.image_url + '"}\' src="' + doctor.profile.image_url + '"> </td>')
@@ -63,11 +69,11 @@ $(function () {
     })
   })
 
-$('body').on('click' , 'img' , function () {
-  // let test = $(event.target)
-  // console.log(test.data('options').image)
-  // console.log('click')
-  $(this).popover('toggle')
-})
+  $('body').on('click' , 'img' , function () {
+    // let test = $(event.target)
+    // console.log(test.data('options').image)
+    // console.log('click')
+    $(this).popover('toggle')
+  })
 
 })
