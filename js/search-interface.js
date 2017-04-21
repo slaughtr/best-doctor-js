@@ -3,17 +3,38 @@ const getSpecialties = require('./../js/search.js').getSpecialties
 
 $(function () {
   // $('*').popover({container: "body"})
-
+  getSpecialties().done((result) => {
+    result.data.forEach(function (specialty) {
+      $('#specialtyList').append('<option value=' + specialty.uid + '>' + specialty.name + '</option>')
+    })
+  })
 
   $('#searchCondition').click(function () {
+
+
+
+    let specialty = $('#specialtyList').val()
     let medicalIssue = $('#inputCondition').val()
+
     $('#showResults').text('')
     getDoctors(medicalIssue).done((result) => {
       let doctor = result.data
+      console.log(specialty);
+      console.log(result.data[0].specialties[0].uid);
 
       if (doctor.length == 0) { //if search returns no results, tell that to the the user
         $('#showResults').append('<tr><td> No results! </tr></td>')
       }
+
+      doctor.forEach(function(specialty, i) {
+        if (specialty.specialties[i]) {
+          if (specialty == specialty.specialties[i].uid) {
+          console.log('found a match');
+        } else {
+          console.log('idk');
+        }
+      }
+      })
 
       doctor.forEach(function (doctor) {
         $('#showResults').append('<tr>')
