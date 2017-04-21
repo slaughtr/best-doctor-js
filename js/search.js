@@ -10,3 +10,13 @@ exports.getDoctors = function (medicalIssue) {
     console.log('fail, : ' + error)
   })
 }
+
+exports.getSpecialties = function () {
+  return $.get('https://api.betterdoctor.com/2016-03-01/specialties?user_key=' + apiKey)
+.then(function (result) {
+  return result
+})
+.fail(function (error) {
+  console.log('fail, : ' + error)
+})
+}

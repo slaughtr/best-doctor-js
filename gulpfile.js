@@ -28,7 +28,7 @@ gulp.task('jshint', function () {
 })
 
 gulp.task('concatInterface', function () {
-  return gulp.src(['js/*-interface.js'])
+  return gulp.src(['./js/*-interface.js'])
   .pipe(concat('allConcat.js'))
   .pipe(gulp.dest('./tmp'))
 })
@@ -75,7 +75,7 @@ gulp.task('build', ['clean'], function () {
   gulp.start('cssBuild')
 })
 
-gulp.task('serve', ['build'], function () {
+gulp.task('serve', function () {
   browserSync.init({
     server: {
       baseDir: './',
