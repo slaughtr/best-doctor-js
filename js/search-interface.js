@@ -1,26 +1,24 @@
 const getDoctors = require('./../js/search.js').getDoctors
+const getDoctorsByName = require('./../js/search.js').getDoctorsByName
 const getSpecialties = require('./../js/search.js').getSpecialties
 
 $(function () {
-  // $('*').popover({container: "body"})
-  getSpecialties().done((result) => {
-    result.data.forEach(function (specialty) {
-      $('#specialtyList').append('<option value=' + specialty.uid + '>' + specialty.name + '</option>')
-    })
-  })
+  //commented the below out, as I couldn't get it to do anything other than display a super huge list of 390 or so specialties. Trying to get uids to line up was a frivilous effort
+
+  // getSpecialties().done((result) => {
+  //   result.data.forEach(function (specialty) {
+  //     $('#specialtyList').append('<option value=' + specialty.uid + '>' + specialty.name + '</option>')
+  //   })
+  // })
 
   $('#searchCondition').click(function () {
-
-
-
     let specialty = $('#specialtyList').val()
-    let medicalIssue = $('#inputCondition').val()
+    let userInput = $('#inputCondition').val()
 
     $('#showResults').text('')
-    getDoctors(medicalIssue).done((result) => {
+
+    getDoctors(userInput).done((result) => {
       let doctor = result.data
-      // console.log(specialty);
-      // console.log(result.data[0].specialties[0].uid);
 
       if (doctor.length == 0) { //if search returns no results, tell that to the the user
         $('#showResults').append('<tr><td> No results! </tr></td>')
