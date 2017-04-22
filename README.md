@@ -12,8 +12,8 @@ _{This is a page where you can search for doctors in the Portland area by enteri
 
 * _Clone this repo to your local computer_
 * _CD into the directory in your terminal_
-* _Type 'npm init && bower init'_
-* _After init has finished, type 'gulp serve_
+* _Type 'npm install && bower install'_
+* _After install has finished, type 'gulp serve' to test on your local machine, or 'gulp build --production' and open index.html_
 
 ## Support and contact details
 
