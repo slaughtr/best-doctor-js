@@ -6,7 +6,7 @@
 
 ## Description
 
-_{This is a page where you can enter }_
+_{This is a page where you can search for doctors in the Portland area by entering a condition you have, or their name. It will display the doctor's name, what practice(s) they work at, a picture, and whether or not they're accepting patients.}_
 
 ## Setup/Installation Requirements
 
