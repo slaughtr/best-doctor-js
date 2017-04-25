@@ -12,6 +12,8 @@ _{This is a page where you can search for doctors in the Portland area by enteri
 
 * _Clone this repo to your local computer_
 * _CD into the directory in your terminal_
+* _Sign up for an API key at https://developer.betterdoctor.com/ _
+* _Add a .env file with your API key, in the format "exports.apiKey = "YOUR_API_KEY_HERE";"_
 * _Type 'npm install && bower install'_
 * _After install has finished, type 'gulp serve' to test on your local machine, or 'gulp build --production' and open index.html_
 
