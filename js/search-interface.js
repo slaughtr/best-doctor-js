@@ -3,14 +3,6 @@ const getDoctorsByName = require('./../js/search.js').getDoctorsByName
 const getSpecialties = require('./../js/search.js').getSpecialties
 
 $(function () {
-  //commented the below out, as I couldn't get it to do anything other than display a super huge list of 390 or so specialties. Trying to get uids to line up was a frivilous effort
-
-  // getSpecialties().done((result) => {
-  //   result.data.forEach(function (specialty) {
-  //     $('#specialtyList').append('<option value=' + specialty.uid + '>' + specialty.name + '</option>')
-  //   })
-  // })
-
   $('#searchCondition').click(function () {
     let specialty = $('#specialtyList').val()
     let userInput = $('#inputCondition').val()
@@ -25,21 +17,6 @@ $(function () {
       }
 
       doctor.forEach(function (doctor) {
-        //failed foreach loop for specialties
-        // doctor.specialties.forEach(function(thisSpec, i) {
-        //   if (thisSpec) {
-        //     console.log(thisSpec.specialties[i])
-        //     console.log('specialty : ' + specialty)
-        //     console.log(thisSpec.specialties[i].uid)
-        //     if (specialty === thisSpec.uid) {
-        //       //do stuff here
-        //   } else {
-        //     console.log('no match found')
-        //   }
-        // } else {
-        //   console.log('no specialities ')
-        // }
-        // })
 
         $('#showResults').append('<tr>')
         //most of the image properties below are for the popover
@@ -68,9 +45,6 @@ $(function () {
   })
 
   $('body').on('click' , 'img' , function () {
-    // let test = $(event.target)
-    // console.log(test.data('options').image)
-    // console.log('click')
     $(this).popover('toggle')
   })
 
